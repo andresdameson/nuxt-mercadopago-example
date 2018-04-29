@@ -3,7 +3,7 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        nuxt-mercadopago-demo
+        nuxt-mercadopago-example
       </h1>
       <h2 class="subtitle">
         Example of implementation of MercadoPago API on NUXT
@@ -28,6 +28,10 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
+  },
+  created () {
+    console.log('Test >> this.$mercadopago');
+    console.log(this.$mercadopago);
   }
 }
 </script>

@@ -13,6 +13,14 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
+  modules: [
+    '~/modules/mercadopago'
+  ],
+
+  mercadopago: {
+    public_key: 'TEST-3683240c-494f-4a4b-b6d4-6f82b73c1952'
+  },
+
   /*
   ** Customize the progress bar color
   */
