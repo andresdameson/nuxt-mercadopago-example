@@ -1,4 +1,4 @@
-import helpers from 'helpers'
+import helpers from '~/modules/mercadopago/helpers.js'
 
 export default (ctx, inject) => {
 
