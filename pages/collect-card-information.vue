@@ -114,6 +114,9 @@ export default {
   methods: {
     // https://www.mercadopago.com.ar/developers/en/tools/sdk/client/javascript#get-doc-types
     async getDocumentTypes () {
+      if (!process.browser) {
+        return []
+      }
       return new Promise((resolve, reject) => {
         this.$mercadopago.getIdentificationTypes((status, response) => {
           if (status === 200) {
