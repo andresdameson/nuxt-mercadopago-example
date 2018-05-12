@@ -87,7 +87,7 @@ export default {
         id: '',
         settings: []
       },
-      cardNumber:'',
+      cardNumber:'4509 9535 6623 3704',
       cardToken:''
     }
   },
@@ -106,8 +106,11 @@ export default {
   },
 
   watch: {
-    async bin (newBin, oldBin) {
-      this.paymentMethodInfo = await this.guessingPaymentMethod(newBin)
+    bin: {
+      immediate: true,
+      handler: async function (newBin, oldBin) {
+        this.paymentMethodInfo = await this.guessingPaymentMethod(newBin)
+      }
     }
   },
 
@@ -154,9 +157,8 @@ export default {
           if (status === 200 || status === 201) {
             resolve(response.id)
           } else {
-            console.log('status', status)
-            console.log('response', response)
-            reject('Verify filled data.')
+            let message = this.$mercadopago.helpers.getMessage('card-token-creation', response)
+            reject(message)
           }
         })
       })
@@ -166,7 +168,7 @@ export default {
       let form = event.target
       try {
         this.cardToken = await this.createToken(form)
-        alert('The card is valid!')
+        alert('The card is valid! Save this token to retrieve the card data later: ' + this.cardToken)
       } catch(error) {
         alert(error)
         event.preventDefault()

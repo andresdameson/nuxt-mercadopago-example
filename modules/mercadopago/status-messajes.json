@@ -1,0 +1,394 @@
+{
+  "card-token-creation": [
+  	{
+      "code": "205",
+      "description": "parameter cardNumber can not be null/empty",
+      "message": {
+        "en": "Enter your card number.",
+        "es": "Ingresa el número de tu tarjeta."
+      }
+
+  	},
+  	{
+      "code": "208",
+      "description": "parameter cardExpirationMonth can not be null/empty",
+      "message": {
+        "en": "Select a month.",
+        "es": "Elige un mes."
+      }
+
+  	},
+  	{
+      "code": "209",
+      "description": "parameter cardExpirationYear can not be null/empty",
+      "message": {
+        "en": "Select a year.",
+        "es": "Elige un año."
+      }
+
+  	},
+  	{
+      "code": "212",
+      "description": "parameter docType can not be null/empty",
+      "message": {
+        "en": "Enter your identification type.",
+        "es": "Ingresa tu documento."
+      }
+
+  	},
+  	{
+      "code": "213",
+      "description": "The parameter cardholder.document.subtype can not be null or empty",
+      "message": {
+        "en": "Enter your identification subtype.",
+        "es": "Ingresa tu documento."
+      }
+
+  	},
+  	{
+      "code": "214",
+      "description": "parameter docNumber can not be null/empty",
+      "message": {
+        "en": "Enter your identification number.",
+        "es": "Ingresa tu documento."
+      }
+
+  	},
+  	{
+      "code": "220",
+      "description": "parameter cardIssuerId can not be null/empty",
+      "message": {
+        "en": "Enter your issuing bank.",
+        "es": "Ingresa tu banco emisor."
+      }
+
+  	},
+  	{
+      "code": "221",
+      "description": "parameter cardholderName can not be null/empty",
+      "message": {
+        "en": "Enter your full name.",
+        "es": "Ingresa el nombre y apellido."
+      }
+
+  	},
+  	{
+      "code": "224",
+      "description": "parameter securityCode can not be null/empty",
+      "message": {
+        "en": "Enter the security code.",
+        "es": "Ingresa el código de seguridad."
+      }
+
+  	},
+  	{
+      "code": "E301",
+      "description": "invalid parameter cardNumber",
+      "message": {
+        "en": "There's something wrong with that number. Please reenter.",
+        "es": "Hay algo mal en ese número. Vuelve a ingresarlo."
+      }
+
+  	},
+  	{
+      "code": "E302",
+      "description": "invalid parameter securityCode",
+      "message": {
+        "en": "Check the security code.",
+        "es": "Revisa el código de seguridad."
+      }
+
+  	},
+  	{
+      "code": "316",
+      "description": "invalid parameter cardholderName",
+      "message": {
+        "en": "Enter a valid name.",
+        "es": "Ingresa un nombre válido."
+      }
+
+  	},
+  	{
+      "code": "322",
+      "description": "invalid parameter docType",
+      "message": {
+        "en": "Check your identification type.",
+        "es": "Revisa tu documento."
+      }
+
+  	},
+  	{
+      "code": "323",
+      "description": "Invalid parameter cardholder.document.subtype",
+      "message": {
+        "en": "Check your identification type.",
+        "es": "Revisa tu documento."
+      }
+
+  	},
+  	{
+      "code": "324",
+      "description": "invalid parameter docNumber",
+      "message": {
+        "en": "Check your identification number.",
+        "es": "Revisa tu documento."
+      }
+
+  	},
+  	{
+      "code": "325",
+      "description": "invalid parameter cardExpirationMonth",
+      "message": {
+        "en": "Check the date.",
+        "es": "Revisa la fecha."
+      }
+
+  	},
+  	{
+      "code": "326",
+      "description": "invalid parameter cardExpirationYear",
+      "message": {
+        "en": "Check the date.",
+        "es": "Revisa la fecha."
+      }
+
+  	},
+  	{
+      "code": "default",
+      "description": "<strong>(any other error code)</strong>",
+      "message": {
+        "en": "Check the information.",
+        "es": "Revisa los datos."
+      }
+
+  	}
+  ],
+  "issuing-payment": [
+    {
+      "code": "106",
+      "description": "Cannot operate between users from different countries",
+      "message": {
+        "es": "No puedes realizar pagos a usuarios de otros países.",
+        "en": "You can not make payments to users in other countries."
+      }
+    },
+    {
+      "code": "109",
+      "description": "Invalid number of shares for this payment_method_id",
+      "message": {
+        "es": "<code>payment_method_id</code> no procesa pagos en <code>installments</code> cuotas. <br> Elige otra tarjeta u otro medio de pago.",
+        "en": "<code>payment_method_id</code> does not process payments in <code>installments</code> Choose another card or another payment method."
+      }
+    },
+    {
+      "code": "126",
+      "description": "The action requested is not valid for the current payment state",
+      "message": {
+        "es": "No pudimos procesar tu pago.",
+        "en": "We could not process your payment."
+      }
+    },
+    {
+      "code": "129",
+      "description": "Cannot pay this amount with this paymentMethod",
+      "message": {
+        "es": "<code>payment_method_id</code> no procesa pagos del monto seleccionado. <br> Elige otra tarjeta u otro medio de pago.",
+        "en": "<code>payment_method_id</code> does not process payments for the selected amount. <br> Choose another card or another payment method."
+      }
+    },
+    {
+      "code": "145",
+      "description": "Invalid users involved",
+      "message": {
+        "es": "No pudimos procesar tu pago.",
+        "en": "We could not process your payment."
+      }
+    },
+    {
+      "code": "150",
+      "description": "The payer_id cannot do payments currently",
+      "message": {
+        "es": "No puedes realizar pagos.",
+        "en": "You can not make payments."
+      }
+    },
+    {
+      "code": "151",
+      "description": "The payer_id cannot do payments with this payment_method_id",
+      "message": {
+        "es": "No puedes realizar pagos.",
+        "en": "You can not make payments."
+      }
+    },
+    {
+      "code": "160",
+      "description": "Collector not allowed to operate",
+      "message": {
+        "es": "No pudimos procesar tu pago.",
+        "en": "We could not process your payment."
+      }
+    },
+    {
+      "code": "204",
+      "description": "Unavailable paymentmethod",
+      "message": {
+        "es": "<code>payment_method_id</code> no está disponible en este momento. <br> Elige otra tarjeta u otro medio de pago.",
+        "en": "<code>payment_method_id</code> is not available at this time. <br> Choose another card or another payment method."
+      }
+    },
+    {
+      "code": "801",
+      "description": "Already posted the same request in the last minute",
+      "message": {
+        "es": "Realizaste un pago similar hace instantes. <br> Intenta nuevamente en unos minutos.",
+        "en": "You made a similar payment moments ago. <br> Try again in a few minutes."
+      }
+    },
+    {
+      "code": "default",
+      "description": "<strong>(any other error code)</strong>",
+      "message": {
+        "es": "No pudimos procesar tu pago.",
+        "en": "We could not process your payment."
+      }
+    }
+  ],
+  "payment-creation": [
+    {
+      "code": "approved",
+      "description": "accredited",
+      "message": {
+        "es": "¡Listo, se acreditó tu pago! <br>En tu resumen verás el cargo de <code>amount</code> como <code>statement_descriptor</code>.",
+        "en": "Done, your payment was accredited! <br>You will see the charge for <code>amount</code> in your bill as <code>statement_descriptor</code>."
+      }
+    },
+    {
+      "code": "in_process",
+      "description": "pending_contingency",
+      "message": {
+        "es": "Estamos procesando el pago. <br>En menos de una hora te enviaremos por e-mail el resultado.",
+        "en": "We are processing the payment. <br>In less than an hour we will e-mail you the results."
+      }
+    },
+    {
+      "code": "in_process",
+      "description": "pending_review_manual",
+      "message": {
+        "es": "Estamos procesando el pago. <br>En menos de 2 días hábiles te diremos por e-mail si se acreditó o si necesitamos más información.",
+        "en": "We are processing the payment. <br>In less than 2 business days we will tell you by e-mail whether it has accredited or we need more information."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_bad_filled_card_number",
+      "message": {
+        "es": "Revisa el número de tarjeta.",
+        "en": "Check the card number."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_bad_filled_date",
+      "message": {
+        "es": "Revisa la fecha de vencimiento.",
+        "en": "Check the expiration date."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_bad_filled_other",
+      "message": {
+        "es": "Revisa los datos.",
+        "en": "Check the information."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_bad_filled_security_code",
+      "message": {
+        "es": "Revisa el código de seguridad.",
+        "en": "Check the security code."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_blacklist",
+      "message": {
+        "es": "No pudimos procesar tu pago.",
+        "en": "We could not process your payment."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_call_for_authorize",
+      "message": {
+        "es": "Debes autorizar ante <code>payment_method_id</code> el pago de <code>amount</code> a MercadoPago",
+        "en": "You must authorize to <code>payment_method_id</code> the payment of <code>amount</code> to MercadoPago"
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_card_disabled",
+      "message": {
+        "es": "Llama a <code>payment_method_id</code> para que active tu tarjeta. <br> El teléfono está al dorso de tu tarjeta.",
+        "en": "Call <code>payment_method_id</code> to activate your card. <br> The phone is on the back of your card."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_card_error",
+      "message": {
+        "es": "No pudimos procesar tu pago.",
+        "en": "We could not process your payment."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_duplicated_payment",
+      "message": {
+        "es": "Ya hiciste un pago por ese valor. <br> Si necesitas volver a pagar usa otra tarjeta u otro medio de pago.",
+        "en": "You already made a payment for that amount. <br> If you need to repay, use another card or other payment method."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_high_risk",
+      "message": {
+        "es": "Tu pago fue rechazado. <br> Elige otro de los medios de pago, te recomendamos con medios en efectivo.",
+        "en": "Your payment was rejected. <br> Choose another payment method. We recommend cash."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_insufficient_amount",
+      "message": {
+        "es": "Tu <code>payment_method_id</code> no tiene fondos suficientes.",
+        "en": "Your <code>payment_method_id</code> do not have sufficient funds."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_invalid_installments",
+      "message": {
+        "es": "<code>payment_method_id</code> no procesa pagos en <code>installments</code> cuotas.",
+        "en": "<code>payment_method_id</code> does not process payments in <code>installments</c"
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_max_attempts",
+      "message": {
+        "es": "Llegaste al límite de intentos permitidos. <br>Elige otra tarjeta u otro medio de pago.",
+        "en": "<code>payment_method_id</code> does not process payments in <code>installments</code> installments."
+      }
+    },
+    {
+      "code": "rejected",
+      "description": "cc_rejected_other_reason",
+      "message": {
+        "es": "<code>payment_method_id</code> no procesó el pago.",
+        "en": "<code>payment_method_id</code> did not process the payment."
+      }
+    }
+  ]
+}
