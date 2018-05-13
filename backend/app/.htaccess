@@ -1,0 +1,19 @@
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+Options +FollowSymlinks
+RewriteBase /
+
+DirectoryIndex index.html index.php
+
+# Redirects all request to public folder
+RewriteRule ^$ index.php [QSA,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /public/index.php [QSA,L]
+
+# Quita el index.html de la URL para que desde JS siempre se lea bien la ruta
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^.*$ index.html [L,QSA]
+</IfModule>

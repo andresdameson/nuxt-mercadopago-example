@@ -1,0 +1,6 @@
+{
+    "require": {
+        "mercadopago/dx-php": "dev-master",
+        "luracast/restler": "^3.0"
+    }
+}

@@ -1,0 +1,24 @@
+version: '2'
+services:
+  www:
+    environment:
+      - "APACHE_UID=${UID}"
+    image: splitbrain/phpfarm:jessie
+    volumes:
+      - ./app/:/var/www
+    ports:
+      - "8051:8051"
+      - "8052:8052"
+      - "8053:8053"
+      - "8054:8054"
+      - "8055:8055"
+      - "8056:8056"
+      - "8070:8070"
+      - "8071:8071"
+      - "8072:8072"
+  db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: test_password
