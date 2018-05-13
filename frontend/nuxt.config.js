@@ -23,7 +23,7 @@ module.exports = {
   },
 
   axios: {
-    baseURL: 'http://localhost:8056/'
+    baseURL: 'http://localhost:8056/api/'
   },
 
   /*

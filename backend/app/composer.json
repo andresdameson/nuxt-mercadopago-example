@@ -1,6 +1,6 @@
 {
     "require": {
-        "mercadopago/dx-php": "dev-master",
-        "luracast/restler": "^3.0"
+        "luracast/restler": "^3.0",
+        "mercadopago/sdk": "0.5.2"
     }
 }

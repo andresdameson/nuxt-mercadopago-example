@@ -1,7 +1,7 @@
 # Backend example
 > Backend example made in PHP
 
-### Prepare
+### Setup
 Run `compose install`
 
 ### Run demo
@@ -12,5 +12,5 @@ export UID && docker-compose up -d
 The server will be listening at http://localhost::8056
 
 ### Docs
-- [MercadoPago PHP SDK](http://beta.mercadopago.com.ar/developers/es/plugins_sdks/sdks/official/php/)
+- [MercadoPago PHP SDK](https://www.mercadopago.com.ar/developers/es/tools/sdk/server/php/)
 - [Luracast Restler Web API](https://github.com/Luracast/Restler)

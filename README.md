@@ -30,7 +30,9 @@ $ npm run dev
 
 ## Docs
 - For detailed explanation on how NUXT work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-- To read MercadoPago API docs follow this link: https://www.mercadopago.com.ar/developers/es/tools/sdk/client/javascript/
+- [MercadoPago SDK Client](https://www.mercadopago.com.ar/developers/en/tools/sdk/client/javascript/)
+- [MercadoPago Custom Checkout Guide](https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/get-started/)
+- [MercadoPago API Reference](https://www.mercadopago.com.ar/developers/en/api-docs/)
 
 # License
 
