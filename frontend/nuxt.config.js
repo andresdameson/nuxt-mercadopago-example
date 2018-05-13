@@ -14,11 +14,16 @@ module.exports = {
     ]
   },
   modules: [
-    '~/modules/mercadopago'
+    '~/modules/mercadopago',
+    '@nuxtjs/axios'
   ],
 
   mercadopago: {
     public_key: 'TEST-3683240c-494f-4a4b-b6d4-6f82b73c1952'
+  },
+
+  axios: {
+    baseURL: 'http://localhost:8056/'
   },
 
   /*

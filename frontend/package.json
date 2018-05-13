@@ -13,6 +13,7 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.1",
     "ajv": "^6.4.0",
     "nuxt": "^1.4.0"
   },
