@@ -88,5 +88,16 @@ https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/
 https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/
 
 
+### Pause and reactivate a subscription
+[View example](http://0.0.0.0:3000/pause-and-reactivate-subscription)
+
+Once you've made a subscription you can pause or reactivate it.
+
+**Guide**\
+https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/plans-and-subscriptions/#pause-and-reactivate
+
+**API Doc**\
+https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/
+
 ## License
 MIT
