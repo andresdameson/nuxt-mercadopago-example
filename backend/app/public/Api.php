@@ -148,4 +148,85 @@ class Api {
         return $customer;
     }
 
+     /**
+     * Pause subscription
+     *
+     * @link (Guide, https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/plans-and-subscriptions/#pause-and-reactivate)
+     * @link(API Docs, https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/)
+     *
+     * @url PUT pause-subscription
+     *
+     * @param string $subscription_id
+     *
+     * @return Subscription
+     */
+    public function pauseSubscription($subscription_id) {
+        try {
+            $response = $this->mp->put(
+                "/v1/subscriptions/" . $subscription_id, [
+                "status" => 'paused'
+            ]);
+            $subscription = $response['response'];
+        } catch(Exception $e) {
+            throw new RestException(
+                $e->getCode(),
+                $e->getMessage()
+            );
+        }
+        return $subscription;
+    }
+
+    /**
+     * Reactivate subscription
+     *
+     * @link (Guide, https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/plans-and-subscriptions/#pause-and-reactivate)
+     * @link(API Docs, https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/)
+     *
+     * @url PUT reactivate-subscription
+     *
+     * @param string $subscription_id
+     *
+     * @return Subscription
+     */
+    public function reactivateSubscription($subscription_id) {
+        try {
+            $response = $this->mp->put(
+                "/v1/subscriptions/" . $subscription_id, [
+                "status" => 'authorized'
+            ]);
+            $subscription = $response['response'];
+        } catch(Exception $e) {
+            throw new RestException(
+                $e->getCode(),
+                $e->getMessage()
+            );
+        }
+        return $subscription;
+    }
+
+     /**
+     * Get subscription
+     *
+     * @link(API Docs, https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/)
+     *
+     * @url GET get-subscription
+     *
+     * @param string $subscription_id
+     *
+     * @return Subscription
+     */
+    public function getSubscription($subscription_id) {
+        try {
+            $response = $this->mp->get(
+                "/v1/subscriptions/".$subscription_id);
+            $subscription = $response['response'];
+        } catch(Exception $e) {
+            throw new RestException(
+                $e->getCode(),
+                $e->getMessage()
+            );
+        }
+        return $subscription;
+    }
+
 }
