@@ -7,7 +7,6 @@
           <input type="text"
             v-model="cardToken"
             id="cardToken"
-            placeholder="190de448353c88a2bf7eb4988c6e086e"
             autocomplete="off"
           />
         </li>
@@ -32,8 +31,8 @@ export default {
 
   data () {
     return {
-      cardToken: '190de448353c88a2bf7eb4988c6e086e',
-      email: 'test_user_19653727@testuser.com'
+      cardToken: '',
+      email: ''
     }
   },
 

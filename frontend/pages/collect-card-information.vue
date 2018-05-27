@@ -18,7 +18,6 @@
             v-model.lazy="cardNumber"
             id="cardNumber"
             data-checkout="cardNumber"
-            placeholder="4509 9535 6623 3704"
             onselectstart="return false"
             onpaste="return false"
             onCopy="return false"
@@ -34,7 +33,7 @@
             type="text"
             id="securityCode"
             data-checkout="securityCode"
-            placeholder="123"
+            value="123"
             onselectstart="return false"
             onpaste="return false"
             onCopy="return false"
@@ -46,15 +45,44 @@
         </li>
         <li>
           <label for="cardExpirationMonth">Expiration month:</label>
-          <input type="text" id="cardExpirationMonth" data-checkout="cardExpirationMonth" placeholder="12" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+          <input
+            type="text"
+            id="cardExpirationMonth"
+            data-checkout="cardExpirationMonth"
+            value="12"
+            onselectstart="return false"
+            onpaste="return false"
+            onCopy="return false"
+            onCut="return false"
+            onDrag="return false"
+            onDrop="return false"
+            autocomplete=off
+          />
         </li>
         <li>
           <label for="cardExpirationYear">Expiration year:</label>
-          <input type="text" id="cardExpirationYear" data-checkout="cardExpirationYear" placeholder="2015" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+          <input
+            type="text"
+            id="cardExpirationYear"
+            data-checkout="cardExpirationYear"
+            value="2022"
+            onselectstart="return false"
+            onpaste="return false"
+            onCopy="return false"
+            onCut="return false"
+            onDrag="return false"
+            onDrop="return false"
+            autocomplete=off
+          />
         </li>
         <li>
           <label for="cardholderName">Card holder name:</label>
-          <input type="text" id="cardholderName" data-checkout="cardholderName" placeholder="APRO" />
+          <input
+            type="text"
+            id="cardholderName"
+            data-checkout="cardholderName"
+            value="APRO"
+          />
         </li>
         <li>
           <label for="docType">Document type:</label>
@@ -66,7 +94,12 @@
         </li>
         <li>
           <label for="docNumber">Document number:</label>
-          <input type="text" id="docNumber" data-checkout="docNumber" placeholder="12345678" />
+          <input
+            type="text"
+            id="docNumber"
+            data-checkout="docNumber"
+            value="12345678"
+          />
         </li>
       </ul>
       <input v-model="paymentMethodInfo.id" type="hidden" name="paymentMethodId" />
@@ -81,7 +114,7 @@ export default {
 
   data () {
     return {
-      email: 'test_user_19653727@testuser.com',
+      email: '',
       documentTypes: [],
       paymentMethodInfo: {
         id: '',
@@ -171,7 +204,6 @@ export default {
         alert('The card is valid! Save this token to retrieve the card data later: ' + this.cardToken)
       } catch(error) {
         alert(error)
-        event.preventDefault()
       }
     }
   },
