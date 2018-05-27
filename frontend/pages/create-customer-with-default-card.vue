@@ -50,8 +50,7 @@ export default {
         this.customerInfo = await this.createCustomerWithDefaultCard()
         alert('The customer has been created!')
       } catch(error) {
-        alert(error)
-        event.preventDefault()
+        alert(error.response.data.error.message || error)
       }
     }
   }

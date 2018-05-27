@@ -62,8 +62,7 @@ export default {
         )
         alert('The customer has been subscribed!')
       } catch(error) {
-        alert(error)
-        event.preventDefault()
+        alert(error.response.data.error.message || error)
       }
     }
   }

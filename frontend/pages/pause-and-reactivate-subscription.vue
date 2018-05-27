@@ -69,7 +69,7 @@ export default {
           throw new Error('There\'s no subscription with that ID.')
         }
       } catch(error) {
-        alert(error)
+        alert(error.response.data.error.message || error)
       }
     },
     async pauseSubscription () {
@@ -84,7 +84,7 @@ export default {
         }
         alert('The subscription has been paused')
       } catch(error) {
-        alert(error)
+        alert(error.response.data.error.message || error)
       }
     },
     async reactivateSubscription () {
@@ -99,7 +99,7 @@ export default {
         }
         alert('The subscription has been reactivated')
       } catch(error) {
-        alert(error)
+        alert(error.response.data.error.message || error)
       }
     }
   }
