@@ -99,5 +99,18 @@ https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/
 **API Doc**\
 https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/
 
+
+### Authorize and cancel payment
+[View example](http://0.0.0.0:3000/authorize-and-cancel-payment)
+
+You can freeze the money on the card of your client at first, and realize or cancel the payment later. This can be useful to verify if a card can be used to perform a payment beforehand.
+
+**Guide**\
+https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/two-step-payments/
+
+**API Doc**\
+https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/create-payments/
+
+
 ## License
 MIT
