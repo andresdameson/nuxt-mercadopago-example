@@ -24,7 +24,7 @@ export default {
 
     if (action === undefined) {
       console.log('Status code not found')
-      return ''
+      return response.message
     }
 
     return action.message[lang]
