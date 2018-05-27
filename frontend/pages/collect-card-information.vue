@@ -1,6 +1,7 @@
 <template>
-  <form action="" method="post" id="pay" name="pay" @submit.prevent="doPay">
+  <form method="post" @submit.prevent="generateCardToken">
     <fieldset>
+      <legend><h2>Collect card information</h2></legend>
       <ul>
         <li>
           <label for="email">Email</label>
@@ -9,7 +10,7 @@
             id="email"
             name="email"
             type="email"
-            placeholder="your email"
+            placeholder="customer's email"
           />
         </li>
         <li>
@@ -104,8 +105,44 @@
       </ul>
       <input v-model="paymentMethodInfo.id" type="hidden" name="paymentMethodId" />
       <input v-model="cardToken" type="hidden" name="token" />
-      <input type="submit" value="Pay!" />
+      <input type="submit" value="Create card token" />
     </fieldset>
+
+    <div v-if="!cardToken">
+      <p style="margin-top: 20px;">If you can't generate a new card token try <a href="javascript:location.reload()">refreshing this page</a> to load the SDK again.
+      </p>
+    </div>
+    <div
+      v-else
+      style="margin-top: 20px;"
+    >
+      <p>If this is a new customer next you'll want to
+        <nuxt-link
+          :to="{
+            name: 'create-customer-with-default-card',
+            query: {
+              cardToken: this.cardToken,
+              email: this.email
+            }
+          }"
+        >
+          create a new customer
+        </nuxt-link> but I recommend you to verify if the card can be used to perform a payment before doing that.<br><br>
+
+        This can be done <nuxt-link
+          :to="{
+            name: 'authorize-and-cancel-payment',
+            query: {
+              paymentMethodId: this.paymentMethodInfo ? this.paymentMethodInfo.id : '',
+              cardToken: this.cardToken,
+              email: this.email
+            }
+          }"
+        >
+          making an authorization of a payment and then cancelling it.
+        </nuxt-link>
+      </p>
+    </div>
   </form>
 </template>
 
@@ -114,7 +151,7 @@ export default {
 
   data () {
     return {
-      email: '',
+      email: this.$route.query.email || '',
       documentTypes: [],
       paymentMethodInfo: {
         id: '',
@@ -197,7 +234,7 @@ export default {
       })
     },
 
-    async doPay (event) {
+    async generateCardToken (event) {
       let form = event.target
       try {
         this.cardToken = await this.createToken(form)

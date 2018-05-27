@@ -2,7 +2,7 @@
   <div>
     <form @submit.prevent="changeSubscriptionStatus">
       <fieldset>
-
+        <legend><h2>Pause & reactivate subscription</h2></legend>
         <ul>
           <li>
             <label for="subscriptionId">Subscription ID:</label>
@@ -15,10 +15,22 @@
           </li>
         </ul>
 
-        <p v-if="subscription">The subscription is {{ subscription.status }} </p>
+        <p v-if="subscription && subscription.status">
+          The subscription is {{ subscription.status }}
+        </p>
 
         <input type="submit" :value="btnText" />
       </fieldset>
+      <div
+        v-if="subscription && subscription.status"
+        style="margin: 20px 0;"
+      >
+        <nuxt-link
+          :to="{name: 'index'}"
+        >
+          Return to start
+        </nuxt-link>
+      </div>
     </form>
   </div>
 </template>
@@ -28,14 +40,14 @@ export default {
 
   data () {
     return {
-      subscriptionId: '9efb949f0f8a4d17ae2b14cbce4da3c9',
+      subscriptionId: this.$route.query.subscriptionId || '',
       subscription: null
     }
   },
 
   computed: {
       btnText () {
-        if (!this.subscription) {
+        if (!this.subscription || !this.subscription.status ) {
           return 'Get subscription info'
         }
         return this.subscription.status === 'authorized'
@@ -46,7 +58,7 @@ export default {
 
   methods: {
     async changeSubscriptionStatus () {
-      if (! this.subscription) {
+      if (! this.subscription || !this.subscription.status ) {
         this.subscription = this.getSubscription()
 
       } else if(this.subscription.status === 'authorized') {

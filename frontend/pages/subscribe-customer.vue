@@ -1,6 +1,7 @@
 <template>
   <form @submit.prevent="subscribe">
     <fieldset>
+      <legend><h2>Suscribe customer to plan</h2></legend>
       <ul>
         <li>
           <label for="planId">Plan ID:</label>
@@ -22,10 +23,30 @@
         </li>
       </ul>
 
-      <pre v-if="subscription">{{ subscription }}</pre>
-
       <input type="submit" value="Suscribe customer" />
     </fieldset>
+
+    <div
+      v-if="subscription"
+      style="margin: 20px 0;"
+    >
+      <p>Once you've made a subscription you can
+        <nuxt-link
+          :to="{
+            name: 'pause-and-reactivate-subscription',
+            query: {
+              subscriptionId: this.subscription.id
+            }
+          }"
+        >
+          pause or reactivate it.
+        </nuxt-link>
+      </p>
+
+      <br>
+
+      <pre v-if="subscription">Subscription: {{ subscription }}</pre>
+    </div>
   </form>
 </template>
 
@@ -34,8 +55,8 @@ export default {
 
   data () {
     return {
-      planId: '3de24b4eadf24e68af737f07f24ca473',
-      customerEmail: '',
+      planId: '',
+      customerEmail: this.$route.query.email || '',
       customer: null,
       subscription: null
     }

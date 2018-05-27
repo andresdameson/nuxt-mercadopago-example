@@ -2,7 +2,7 @@
   <div>
     <form v-if="!payment" @submit.prevent="authorizePayment">
       <fieldset>
-
+        <legend><h2>Authorize & cancel payment</h2></legend>
         <ul>
           <li>
             <label for="paymentMethodId">Payment Method ID:</label>
@@ -35,6 +35,20 @@
 
         <input type="submit" value="Authorize payment" />
       </fieldset>
+
+      <p style="margin-top: 20px;">If the Card Token in invalid you have probably already used it. Remember that it is one time use only. <br><br>
+
+        Want to
+        <nuxt-link
+            :to="{
+              name: 'collect-card-information',
+              query: {
+                email: this.customerEmail
+              }
+            }"
+          >
+            create a new token</nuxt-link>?
+      </p>
     </form>
 
     <form v-else @submit.prevent="cancelPayment">
@@ -54,8 +68,38 @@
         <input type="submit" value="Cancel payment" />
       </fieldset>
 
-      <pre>{{ payment }}</pre>
+      <div style="margin-top: 20px;">
+        <p v-if="payment.status === 'cancelled'">You verified  that the card can be used to perform a payment, now you can
+          <nuxt-link
+            :to="{
+              name: 'create-customer-with-default-card',
+              query: {
+                cardToken: this.cardToken,
+                email: this.customerEmail
+              }
+            }"
+          >
+            create a new customer and set this card as default.
+          </nuxt-link>
 
+          <br><br>
+
+          Do you want to try again?
+          <nuxt-link
+            :to="{
+              name: 'collect-card-information',
+              query: {
+                email: this.customerEmail
+              }
+            }"
+          >
+            Generate a new token
+          </nuxt-link>
+          and start again.
+        </p>
+
+        <pre style="margin-top: 20px;">Payment: {{ payment }}</pre>
+      </div>
     </form>
   </div>
 </template>
@@ -64,9 +108,9 @@
 export default {
   data () {
     return {
-      paymentMethodId: '',
-      cardToken: '',
-      customerEmail: '',
+      paymentMethodId: this.$route.query.paymentMethodId || '',
+      cardToken: this.$route.query.cardToken || '',
+      customerEmail: this.$route.query.email || '',
       payment: null
     }
   },
@@ -75,13 +119,6 @@ export default {
     paymentId () {
       return (this.payment && this.payment.id) ? this.payment.id : 0
     }
-  },
-
-  // I'll need all this data in order to create the authorization
-  created () {
-    this.paymentMethodId = this.$route.query.paymentMethodId || ''
-    this.cardToken = this.$route.query.cardToken || ''
-    this.customerEmail = this.$route.query.customerEmail || ''
   },
 
   methods: {
@@ -140,7 +177,7 @@ export default {
           'cancel-payment-authorization', {
             payment_id: this.paymentId,
         })
-        this.payment = null
+        this.payment.status = 'cancelled'
         alert('The payment has been cancelled');
       } catch(error) {
         alert(error.response.data.error.message || error)

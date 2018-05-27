@@ -56,7 +56,7 @@ $ npm run dev
 
 ## EXAMPLES
 
-### Collect card information
+### Collect card information / Create card token
 [View example](http://0.0.0.0:3000/collect-card-information)
 
 To make a payment we have to create a card token which will hold all data needed in a secure way.
@@ -65,6 +65,17 @@ Bear in mind this token has an expiration time and it can be used only once.
 **Guide**\
 (This guide is followed partially)\
 https://www.mercadopago.com.ar/developers/es/solutions/payments/custom-checkout/charge-with-creditcard/javascript/
+
+### Authorize and cancel payment / Make payment
+[View example](http://0.0.0.0:3000/authorize-and-cancel-payment)
+
+You can freeze the money on the card of your client at first, and realize or cancel the payment later. This can be useful to verify if a card can be used to perform a payment beforehand.
+
+**Guide**\
+https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/two-step-payments/
+
+**API Doc**\
+https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/create-payments/
 
 ### Create customer with default card
 [View example](http://0.0.0.0:3000/create-customer-with-default-card)
@@ -88,7 +99,7 @@ https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/
 https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/
 
 
-### Pause and reactivate a subscription
+### Pause and reactivate a subscription / Get subscription info
 [View example](http://0.0.0.0:3000/pause-and-reactivate-subscription)
 
 Once you've made a subscription you can pause or reactivate it.
@@ -98,18 +109,6 @@ https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/
 
 **API Doc**\
 https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/subscriptions/
-
-
-### Authorize and cancel payment
-[View example](http://0.0.0.0:3000/authorize-and-cancel-payment)
-
-You can freeze the money on the card of your client at first, and realize or cancel the payment later. This can be useful to verify if a card can be used to perform a payment beforehand.
-
-**Guide**\
-https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/two-step-payments/
-
-**API Doc**\
-https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/create-payments/
 
 
 ## License

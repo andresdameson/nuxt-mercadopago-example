@@ -1,6 +1,7 @@
 <template>
   <form @submit.prevent="createNewCustomer">
     <fieldset>
+      <legend><h2>Create new customer</h2></legend>
       <ul>
         <li>
           <label for="cardToken">Card token:</label>
@@ -21,8 +22,30 @@
           />
         </li>
       </ul>
-      <input type="submit" value="Create new customer" />
+      <input type="submit" value="Create" />
     </fieldset>
+
+    <div
+      v-if="customerInfo"
+      style="margin: 20px 0;"
+    >
+      <p>At this time we can
+        <nuxt-link
+          :to="{
+            name: 'subscribe-customer',
+            query: {
+              email: this.email
+            }
+          }"
+        >
+          subscribe the customer to a plan
+        </nuxt-link>
+      </p>
+
+      <br>
+
+      <pre v-if="customerInfo">Customer's info: {{ customerInfo }}</pre>
+    </div>
   </form>
 </template>
 
@@ -31,8 +54,9 @@ export default {
 
   data () {
     return {
-      cardToken: '',
-      email: ''
+      cardToken: this.$route.query.cardToken || '',
+      email: this.$route.query.email || '',
+      customerInfo: null
     }
   },
 
