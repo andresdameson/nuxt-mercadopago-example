@@ -32,13 +32,25 @@
       <p>At this time we can
         <nuxt-link
           :to="{
+            name: 'create-plan',
+            query: {
+              email: this.email
+            }
+          }"
+        >
+          create a plan
+        </nuxt-link>
+        to subscribe our customer to it.<br><br>
+
+        If you already have one just <nuxt-link
+          :to="{
             name: 'subscribe-customer',
             query: {
               email: this.email
             }
           }"
         >
-          subscribe the customer to a plan
+          subscribe the customer.
         </nuxt-link>
       </p>
 

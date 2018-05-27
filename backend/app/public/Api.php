@@ -308,4 +308,27 @@ class Api {
         return $payment;
     }
 
+    /**
+     * Create subscription plan
+     *
+     * @link(Guide, https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/plans-and-subscriptions/#first-plan)
+     * @link(API Docs, https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/)
+     *
+     * @url POST create-plan
+     *
+     * @return Plan
+     */
+    public function createPlan($request_data) {
+        try {
+            $response = $this->mp->post("/v1/plans", $request_data);
+            $plan = $response['response'];
+        } catch(Exception $e) {
+            throw new RestException(
+                $e->getCode(),
+                $e->getMessage()
+            );
+        }
+        return $plan;
+    }
+
 }

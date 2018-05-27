@@ -86,6 +86,18 @@ In order to perform payments later on we have to create a customer on MercadoPag
 https://www.mercadopago.com.ar/developers/es/solutions/payments/custom-checkout/customers-and-cards/
 
 
+### Create a plan
+[View example](http://0.0.0.0:3000/create-plan)
+
+Before you can make a subscription you need to have a subscription plan. Let's create one.
+
+**Guide**\
+https://www.mercadopago.com.ar/developers/en/solutions/payments/custom-checkout/plans-and-subscriptions/#first-plan
+
+**API Doc**\
+https://www.mercadopago.com.ar/developers/en/api-docs/custom-checkout/plans/
+
+
 ### Subscribe a customer
 [View example](http://0.0.0.0:3000/subscribe-customer)
 

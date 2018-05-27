@@ -55,7 +55,7 @@ export default {
 
   data () {
     return {
-      planId: '',
+      planId: this.$route.query.planId || '',
       customerEmail: this.$route.query.email || '',
       customer: null,
       subscription: null
